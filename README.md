@@ -1,4 +1,4 @@
-# Turbolinks is no longer under active development
+# Fork of Turbolinks Public Archive with some patches
 
 Please note that Turbolinks is no longer under active development. It has been superseded by a new framework called [Turbo](https://github.com/hotwired/turbo), which is part of the [Hotwire](https://hotwire.dev) umbrella.
 
