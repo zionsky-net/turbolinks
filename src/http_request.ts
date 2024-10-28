@@ -68,12 +68,14 @@ export class HttpRequest {
     this.endRequest(xhr => {
       const contentType = xhr.getResponseHeader("Content-Type")
       if (contentTypeIsHTML(contentType)) {
-        if (xhr.status >= 200 && xhr.status < 300) {
+        let respCode = xhr.status;
+        // (xhr.status >= 200 && xhr.status < 300)
+        if (200 <= respCode && respCode < 300 || respCode === 403 || respCode === 404 || respCode === 500) {
           const redirectedToLocation = Location.wrap(xhr.getResponseHeader("Turbolinks-Location"))
           this.delegate.requestCompletedWithResponse(xhr.responseText, redirectedToLocation)
         } else {
           this.failed = true
-          this.delegate.requestFailedWithStatusCode(xhr.status, xhr.responseText)
+          this.delegate.requestFailedWithStatusCode(respCode, xhr.responseText)
         }
       } else {
         this.failed = true
