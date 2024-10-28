@@ -1,9 +1,5 @@
 # Fork of Turbolinks Public Archive with some patches
 
-Please note that Turbolinks is no longer under active development. It has been superseded by a new framework called [Turbo](https://github.com/hotwired/turbo), which is part of the [Hotwire](https://hotwire.dev) umbrella.
-
-# Turbolinks
-
 **Turbolinks® makes navigating your web application faster.** Get the performance benefits of a single-page application without the added complexity of a client-side JavaScript framework. Use HTML to render your views on the server side and link to pages as usual. When you follow a link, Turbolinks automatically fetches the page, swaps in its `<body>`, and merges its `<head>`, all without incurring the cost of a full page load.
 
 ![Turbolinks](https://s3.amazonaws.com/turbolinks-docs/images/turbolinks.gif)
@@ -503,7 +499,7 @@ Detects whether Turbolinks is supported in the current browser (see [Supported B
 
 ## Full List of Events
 
-Turbolinks emits events that allow you to track the navigation lifecycle and respond to page loading. Except where noted, Turbolinks fires events on the `document` object.  
+Turbolinks emits events that allow you to track the navigation lifecycle and respond to page loading. Except where noted, Turbolinks fires events on the `document` object.
 Note that when using jQuery, the data on the event must be accessed as `$event.originalEvent.data`.
 
 * `turbolinks:click` fires when you click a Turbolinks-enabled link. The clicked element is the event target. Access the requested location with `event.data.url`. Cancel this event to let the click fall through to the browser as normal navigation.
