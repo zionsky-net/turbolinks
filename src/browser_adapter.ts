@@ -65,6 +65,7 @@ export class BrowserAdapter implements Adapter {
   }
 
   pageInvalidated() {
+    // return window.location.replace(this.controller.location.requestURL);
     this.reload()
   }
 
